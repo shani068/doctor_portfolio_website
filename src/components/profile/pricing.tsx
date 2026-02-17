@@ -70,7 +70,7 @@ export default function Pricing() {
             >
               {/* Featured Badge */}
               {card.featured && (
-                <div className="absolute -top-0 right-6 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full">
+                <div className="absolute -top-0 right-6 bg-blue-700 text-white text-xs font-bold px-4 py-1 rounded-full">
                   RECOMMENDED
                 </div>
               )}
@@ -85,22 +85,22 @@ export default function Pricing() {
 
                 <div className="py-6 border-t border-border">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-primary">{card.price}</span>
+                    <span className="text-4xl font-bold text-blue-700">{card.price}</span>
                   </div>
                 </div>
 
                 {card.featured && (
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <Check className="h-5 w-5 text-primary" />
+                      <Check className="h-5 w-5 text-blue-700" />
                       <span className="text-sm text-foreground">Full psychiatric evaluation</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Check className="h-5 w-5 text-primary" />
+                      <Check className="h-5 w-5 text-blue-700" />
                       <span className="text-sm text-foreground">Diagnostic report included</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Check className="h-5 w-5 text-primary" />
+                      <Check className="h-5 w-5 text-blue-700" />
                       <span className="text-sm text-foreground">Treatment plan provided</span>
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export default function Pricing() {
             {pricingDetails.map((detail, index) => (
               <div key={index} className="text-center">
                 <p className="font-semibold text-foreground mb-1">{detail.label}</p>
-                <p className="text-primary font-bold text-lg">{detail.value}</p>
+                <p className="text-blue-700 font-bold text-lg">{detail.value}</p>
               </div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function Pricing() {
             <p className="text-sm font-semibold text-foreground">
               Includes full psychiatric evaluation, diagnostic report, and treatment plan
             </p>
-            <p className="text-sm text-primary">
+            <p className="text-sm text-blue-700">
               Follow-Up / Titration Appointments: €0
             </p>
             <p className="text-sm text-muted-foreground">
@@ -134,7 +134,7 @@ export default function Pricing() {
           </div>
 
           {/* Important Note */}
-          <div className="mt-6 pt-6 border-t border-primary/20">
+          <div className="mt-6 pt-6 border-t border-blue-700/20">
             <p className="text-xs text-center text-muted-foreground">
               <span className="block mb-2">
                 Please note: This is a private, non-HSE service.

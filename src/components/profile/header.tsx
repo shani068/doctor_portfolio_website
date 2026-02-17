@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button'
-import { Menu, X } from 'lucide-react'
+import { Menu, Stethoscope, X } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Header({ onBookingClick }: { onBookingClick: () => void }) {
@@ -15,15 +15,15 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white font-bold text-lg">
-            DS
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-700 text-white font-bold text-lg">
+          <Stethoscope className="h-5 w-5 text-white" />
           </div>
           <div className="hidden sm:block">
-            <h1 className="text-xl font-bold text-primary">Dr. Dash Sidhu</h1>
+            <h1 className="text-xl font-bold text-blue-700">Dr. Dash Sidhu</h1>
             <p className="text-xs text-muted-foreground">Healthcare Provider</p>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
           </button>
           <Button
             onClick={onBookingClick}
-            className="bg-primary hover:bg-primary/90 text-white"
+            className="bg-blue-700 hover:bg-blue-800 text-white"
           >
             Book Appointment
           </Button>
@@ -61,7 +61,7 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
           <Button
             onClick={onBookingClick}
             size="sm"
-            className="bg-primary hover:bg-primary/90 text-white"
+            className="bg-blue-700 hover:bg-blue-800 text-white"
           >
             Book
           </Button>

@@ -71,7 +71,7 @@ export default function Services() {
         {/* Section header */}
         <div className="mb-20 text-center">
           <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-sm font-semibold text-primary">TREATMENT APPROACHES</span>
+            <span className="text-sm font-semibold text-blue-700">TREATMENT APPROACHES</span>
           </div>
           <h2 className="mb-6 text-4xl font-bold text-foreground sm:text-5xl text-balance">
             Our Core Treatment Approaches
@@ -108,7 +108,7 @@ export default function Services() {
                   </div>
 
                   {/* Bottom accent */}
-                  <div className={`h-1 w-12 bg-gradient-to-r ${service.color} rounded-full`} />
+                  <div className={`h-1 w-12 bg-linear-to-r ${service.color} rounded-full`} />
                 </div>
               </Card>
             )
@@ -130,7 +130,7 @@ export default function Services() {
 
                   <div className="relative z-10 space-y-4">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="h-6 w-6 text-primary" />
+                      <Icon className="h-6 w-6 text-blue-700" />
                     </div>
 
                     <div>

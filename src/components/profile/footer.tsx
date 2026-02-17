@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button'
-import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Linkedin } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Linkedin, Stethoscope } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -13,8 +13,8 @@ export default function Footer() {
           {/* Brand section */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white font-bold text-lg">
-                DS
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-700 text-white font-bold text-lg">
+                <Stethoscope className="h-5 w-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-foreground">Dr. Dash Sidhu</h3>
             </div>
@@ -55,17 +55,17 @@ export default function Footer() {
             <h4 className="font-bold text-foreground">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <Phone className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
                 <div className="text-sm text-muted-foreground">+1 (555) 123-4567</div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <Mail className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
                 <a href="mailto:contact@drdashdishu.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   contact@drdashsidhu.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <MapPin className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
                 <div className="text-sm text-muted-foreground">Dublin, Ireland</div>
               </li>
             </ul>
@@ -76,15 +76,15 @@ export default function Footer() {
             <h4 className="font-bold text-foreground">Hours</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-primary" />
+                <Clock className="h-4 w-4 text-blue-700" />
                 Monday - Friday: 9 AM - 5 PM
               </li>
               <li className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-primary" />
+                <Clock className="h-4 w-4 text-blue-700" />
                 Saturday: 10 AM - 2 PM
               </li>
               <li className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-primary" />
+                <Clock className="h-4 w-4 text-blue-700" />
                 24/7 Emergency Support
               </li>
             </ul>
@@ -106,7 +106,7 @@ export default function Footer() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full border-border hover:bg-primary hover:text-primary cursor-pointer hover:border-primary bg-transparent"
+              className="rounded-full border-border hover:bg-blue-700 hover:text-blue-700 cursor-pointer hover:border-blue-700 bg-transparent"
             >
               <Facebook className="h-4 w-4" />
               <span className="sr-only">Facebook</span>
@@ -114,7 +114,7 @@ export default function Footer() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full border-border hover:bg-primary hover:text-primary cursor-pointer hover:border-primary bg-transparent"
+              className="rounded-full border-border hover:bg-blue-700 hover:text-blue-700 cursor-pointer hover:border-blue-700 bg-transparent"
             >
               <Twitter className="h-4 w-4" />
               <span className="sr-only">Twitter</span>
@@ -122,7 +122,7 @@ export default function Footer() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full border-border hover:bg-primary hover:text-primary cursor-pointer hover:border-primary bg-transparent"
+              className="rounded-full border-border hover:bg-blue-700 hover:text-blue-700 cursor-pointer hover:border-blue-700 bg-transparent"
             >
               <Linkedin className="h-4 w-4" />
               <span className="sr-only">LinkedIn</span>

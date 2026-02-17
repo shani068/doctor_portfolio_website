@@ -73,7 +73,7 @@ export default function Testimonials() {
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
                   <Star
                     key={i}
-                    className="h-4 w-4 fill-primary text-primary"
+                    className="h-4 w-4 fill-blue-700 text-blue-700"
                   />
                 ))}
               </div>
