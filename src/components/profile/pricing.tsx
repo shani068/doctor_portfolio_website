@@ -111,7 +111,7 @@ export default function Pricing() {
         </div>
 
         {/* Pricing Details Section */}
-        <div className="max-w-3xl mx-auto bg-white/50 dark:bg-white/5 rounded-xl border border-primary/20 p-8 space-y-6">
+        {/* <div className="max-w-3xl mx-auto bg-white/50 dark:bg-white/5 rounded-xl border border-primary/20 p-8 space-y-6">
           <div className="space-y-4">
             {pricingDetails.map((detail, index) => (
               <div key={index} className="text-center">
@@ -133,7 +133,6 @@ export default function Pricing() {
             </p>
           </div>
 
-          {/* Important Note */}
           <div className="mt-6 pt-6 border-t border-blue-700/20">
             <p className="text-xs text-center text-muted-foreground">
               <span className="block mb-2">
@@ -142,7 +141,7 @@ export default function Pricing() {
               Medication prescribing follows Irish national guidelines and may require shared care with your GP.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
