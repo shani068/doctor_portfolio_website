@@ -28,20 +28,20 @@ const pricingCards: PricingCard[] = [
   },
 ]
 
-const pricingDetails = [
-  {
-    label: 'Initial ADHD Assessment:',
-    value: '€0 + €0 + €0',
-  },
-  {
-    label: 'Follow-Up / Titration Appointments:',
-    value: '€0',
-  },
-  {
-    label: 'Shared Care Letters and Prescriptions:',
-    value: 'Available as needed',
-  },
-]
+// const pricingDetails = [
+//   {
+//     label: 'Initial ADHD Assessment:',
+//     value: '€0 + €0 + €0',
+//   },
+//   {
+//     label: 'Follow-Up / Titration Appointments:',
+//     value: '€0',
+//   },
+//   {
+//     label: 'Shared Care Letters and Prescriptions:',
+//     value: 'Available as needed',
+//   },
+// ]
 
 export default function Pricing() {
   return (
