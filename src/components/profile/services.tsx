@@ -1,66 +1,73 @@
 import { Card } from '@/components/ui/card'
 import {
-  Brain,
-  Pill,
-  Users,
-  Lightbulb,
+  ClipboardList,
   Video,
-  Home,
+  FileCheck,
+  Pill,
+  Lightbulb,
   Heart,
+  Video as VideoIcon,
+  Home,
   Activity,
 } from 'lucide-react'
 
-const primaryServices = [
+// PDF: Our 3-Step ADHD Assessment Process (only 3 steps; Ongoing Care is separate below)
+const assessmentSteps = [
   {
-    icon: Brain,
-    title: 'Diagnostic Assessment',
+    step: 1,
+    icon: ClipboardList,
+    title: 'Pre-Assessment Screening – €300',
     description:
-      'Comprehensive ADHD and psychiatric evaluation using evidence-based diagnostic tools. Detailed assessment across all age groups from children to adults with thorough clinical interviews and testing.',
+      'You’ll complete a set of validated questionnaires to explore attention, hyperactivity, executive functioning, and emotional regulation. If ADHD is likely, we’ll proceed to full diagnostic assessment.',
     color: 'from-blue-500 to-blue-600',
   },
   {
-    icon: Pill,
-    title: 'Medication Management',
+    step: 2,
+    icon: Video,
+    title: 'Comprehensive Psychiatric Assessment – €500',
     description:
-      'Personalized medication selection and monitoring with regular follow-ups. We ensure optimal dosing and minimal side effects while tracking treatment efficacy over time.',
+      'A 90-minute video consultation with the Consultant Psychiatrist, including: full psychiatric history, symptom exploration using DSM-5 criteria, exploration of co-existing mental health issues, and functional impact at work, relationships, and home.',
     color: 'from-cyan-500 to-blue-600',
+    featured: true,
   },
   {
-    icon: Users,
-    title: 'Family Counseling',
+    step: 3,
+    icon: FileCheck,
+    title: 'Diagnosis & Treatment Planning – €400',
     description:
-      'Supportive family therapy to help families understand ADHD and manage its impact. We provide coping strategies and communication tools for the whole family unit.',
+      'Same-day diagnosis, if appropriate. Personalized treatment plan including: medication options (e.g. stimulants, non-stimulants), psychoeducation, ADHD coaching, and support for co-existing conditions (e.g. anxiety, depression).',
     color: 'from-teal-500 to-cyan-600',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Behavioral Coaching',
-    description:
-      'Personalized coaching for developing coping strategies and life skills. Learn organizational techniques, time management, and behavioral modification strategies tailored to your needs.',
-    color: 'from-green-500 to-teal-600',
   },
 ]
 
-const supportingServices = [
+const treatmentModalities = [
   {
-    icon: Video,
-    title: 'Virtual Consultations',
-    description: 'Convenient video appointments from home',
+    icon: Pill,
+    title: 'Medication',
+    description: 'Stimulant and non-stimulant options, titrated and monitored by your Consultant Psychiatrist.',
   },
   {
-    icon: Home,
-    title: 'Home Visits',
-    description: 'In-person care at your residence',
-  },
-  {
-    icon: Heart,
-    title: 'Home Care Support',
-    description: 'Ongoing care and monitoring at home',
+    icon: Lightbulb,
+    title: 'ADHD Coaching & Psychoeducation',
+    description: 'Strategies for structure, organization, and emotional regulation.',
   },
   {
     icon: Activity,
-    title: 'General Psychiatry',
-    description: 'Comprehensive mental health services',
+    title: 'Lifestyle & Psychological Strategies',
+    description: 'Evidence-based approaches supported by clinical research.',
+  },
+]
+
+const deliveryOptions = [
+  {
+    icon: VideoIcon,
+    title: 'Video Consultations',
+    description: '90-minute and follow-up appointments from home',
+  },
+  {
+    icon: Home,
+    title: 'Discreet & Professional',
+    description: 'Strict confidentiality, stigma-free care',
   },
 ]
 
@@ -68,58 +75,106 @@ export default function Services() {
   return (
     <section id="services" className="py-20 sm:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
+        {/* Section header - PDF: Our 3-Step ADHD Assessment Process */}
         <div className="mb-20 text-center">
           <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-sm font-semibold text-blue-700">TREATMENT APPROACHES</span>
+            <span className="text-sm font-semibold text-blue-700">ADULT ADHD ASSESSMENT</span>
           </div>
           <h2 className="mb-6 text-4xl font-bold text-foreground sm:text-5xl text-balance">
-            Our Core Treatment Approaches
+            Our 3-Step ADHD Assessment Process
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We combine multiple evidence-based treatment modalities to provide comprehensive care for ADHD and psychiatric conditions across all ages
+            A clear, structured pathway from screening to diagnosis and treatment—all led by a Consultant Psychiatrist. If you suspect you may have ADHD, effective help is available.
           </p>
         </div>
 
-        {/* Primary Services - Large Cards */}
-        <div className="grid gap-8 lg:grid-cols-2 mb-16">
-          {primaryServices.map((service, index) => {
-            const Icon = service.icon
+        {/* 3-Step Process only - from PDF */}
+        <div className="grid gap-8 lg:grid-cols-3 mb-12">
+          {assessmentSteps.map((item, index) => {
+            const Icon = item.icon
             return (
               <Card
                 key={index}
-                className="group relative overflow-hidden border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl p-8"
+                className={`group relative overflow-hidden border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl p-8 ${item.featured ? 'border-2 border-primary' : ''}`}
               >
-                {/* Background gradient */}
-                <div className={`absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300 bg-gradient-to-br ${service.color}`} />
+                <div className={`absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300 bg-linear-to-br ${item.color}`} />
 
                 <div className="relative z-10 space-y-6">
-                  {/* Icon */}
-                  <div className={`inline-flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br ${service.color} text-white shadow-lg`}>
-                    <Icon className="h-8 w-8" />
+                  <div className="flex items-center gap-3">
+                    {/* <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 text-white font-bold text-sm">
+                      {item.step}
+                    </span> */}
+                    <div className={`inline-flex h-14 w-14 items-center justify-center rounded-xl bg-linear-to-br ${item.color} text-white shadow-lg`}>
+                      <Icon className="h-7 w-7" />
+                    </div>
                   </div>
 
-                  {/* Content */}
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-3">{service.title}</h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
+                    <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                    {item.step === 2 ? (
+                      <>
+                        <p className="text-base text-muted-foreground leading-relaxed mb-2">
+                          A 90-minute video consultation with the Consultant Psychiatrist, including:
+                        </p>
+                        <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                          <li>Full psychiatric history</li>
+                          <li>Symptom exploration using DSM-5 criteria</li>
+                          <li>Exploration of co-existing mental health issues</li>
+                          <li>Functional impact at work, relationships, and home</li>
+                        </ul>
+                      </>
+                    ) : item.step === 3 ? (
+                      <>
+                        <p className="text-base text-muted-foreground leading-relaxed mb-2">
+                          Same-day diagnosis, if appropriate. Personalized treatment plan including:
+                        </p>
+                        <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                          <li>Medication options (e.g. stimulants, non-stimulants)</li>
+                          <li>Psychoeducation</li>
+                          <li>ADHD coaching</li>
+                          <li>Support for co-existing conditions (e.g. anxiety, depression)</li>
+                        </ul>
+                      </>
+                    ) : (
+                      <p className="text-base text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Bottom accent */}
-                  <div className={`h-1 w-12 bg-linear-to-r ${service.color} rounded-full`} />
+                  <div className={`h-1 w-12 bg-linear-to-r ${item.color} rounded-full`} />
                 </div>
               </Card>
             )
           })}
         </div>
 
-        {/* Supporting Services - Smaller Cards */}
+        {/* PDF: Ongoing Care & Medication Titration - €200 (separate from the 3 steps) */}
+        <Card className="mb-16 border-primary/30 bg-primary/5 p-8">
+          <div className="flex flex-col sm:flex-row sm:items-start gap-6">
+            <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-green-500 to-teal-600 text-white shadow-lg">
+              <Heart className="h-7 w-7" />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold text-foreground">Ongoing Care & Medication Titration – €200</h3>
+              <p className="text-muted-foreground mb-3">If treatment is started, you’ll receive:</p>
+              <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                <li>Regular follow-ups for medication titration and monitoring</li>
+                <li>Ongoing reviews to optimize effectiveness and manage side effects</li>
+                <li>Support letters for work, education, or accommodations (if required)</li>
+              </ul>
+            </div>
+          </div>
+        </Card>
+
+        {/* Treatment modalities - PDF evidence-based */}
         <div className="mt-20">
-          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Delivery Methods & Additional Services</h3>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {supportingServices.map((service, index) => {
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Evidence-Based Treatment</h3>
+          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Medication, coaching, lifestyle modification, and psychological strategies—all supported by clinical research.
+          </p>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {treatmentModalities.map((service, index) => {
               const Icon = service.icon
               return (
                 <Card
@@ -127,14 +182,37 @@ export default function Services() {
                   className="group relative overflow-hidden border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg p-6"
                 >
                   <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
                   <div className="relative z-10 space-y-4">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                       <Icon className="h-6 w-6 text-blue-700" />
                     </div>
-
                     <div>
                       <h4 className="text-lg font-bold text-foreground mb-2">{service.title}</h4>
+                      <p className="text-sm text-muted-foreground">{service.description}</p>
+                    </div>
+                  </div>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Delivery / how we work */}
+        <div className="mt-12">
+          <div className="grid gap-6 sm:grid-cols-2 max-w-2xl mx-auto">
+            {deliveryOptions.map((service, index) => {
+              const Icon = service.icon
+              return (
+                <Card
+                  key={index}
+                  className="group relative overflow-hidden border-border hover:border-primary/50 transition-all duration-300 p-6"
+                >
+                  <div className="relative z-10 flex items-center gap-4">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                      <Icon className="h-6 w-6 text-blue-700" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-foreground">{service.title}</h4>
                       <p className="text-sm text-muted-foreground">{service.description}</p>
                     </div>
                   </div>

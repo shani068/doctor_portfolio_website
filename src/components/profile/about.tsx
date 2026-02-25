@@ -11,52 +11,51 @@ export default function About() {
           {/* Content */}
           <div className="space-y-8">
             <div>
-              <Badge className="mb-4 bg-primary/10 text-blue-700 hover:bg-primary/20">Meet Dr. Dash Sidhu</Badge>
+              <Badge className="mb-4 bg-primary/10 text-blue-700 hover:bg-primary/20">Why Choose Us</Badge>
               <h2 className="text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                Adult ADHD & Psychiatry Expert
+                Consultant Psychiatrist–Led Adult ADHD Care
               </h2>
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Dr. Dash Sidhu is a specialized psychiatrist with 15+ years of dedicated expertise in Adult ADHD diagnosis, 
-              treatment, and behavioral management. Committed to providing evidence-based, compassionate care, Dr. Sidhu 
-              combines clinical excellence with a holistic approach to mental health.
+              We offer comprehensive, evidence-based assessment and management for Adult ADHD, led exclusively by a Consultant Psychiatrist with over 8 years of experience in diagnosing and treating complex mental health conditions. Our service is discreet, professional, and tailored to adults seeking clarity, structure, and support.
             </p>
 
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              With deep experience in medication management, family-centered care, and behavioral coaching, Dr. Sidhu 
-              treats patients of all ages. Our practice emphasizes personalized treatment plans that adapt to each patient's 
-              unique needs, delivered through flexible appointment options including virtual, home visits, and in-clinic sessions.
-            </p>
-
-            {/* Key points */}
+            {/* Key points - from PDF Why Choose Us */}
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-foreground">ADHD & Psychiatry Specialist</h3>
-                  <p className="text-sm text-muted-foreground">Expert diagnosis and evidence-based treatment</p>
+                  <h3 className="font-bold text-foreground">Specialist-led care</h3>
+                  <p className="text-sm text-muted-foreground">Your full journey—from assessment to treatment—is overseen by a Consultant Psychiatrist, ensuring the highest standard of clinical expertise.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-foreground">Comprehensive Treatment Modalities</h3>
-                  <p className="text-sm text-muted-foreground">Assessment, medication, family therapy, coaching</p>
+                  <h3 className="font-bold text-foreground">No waiting lists</h3>
+                  <p className="text-sm text-muted-foreground">Quick access to appointments, so you don’t have to wait months for answers.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-foreground">All Ages Welcome</h3>
-                  <p className="text-sm text-muted-foreground">Children, adolescents, and adults</p>
+                  <h3 className="font-bold text-foreground">Personalized plans</h3>
+                  <p className="text-sm text-muted-foreground">ADHD presents differently in adults. Each assessment is uniquely tailored, accounting for co-existing conditions such as anxiety, depression, or emotional dysregulation.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-foreground">Patient-Centered, Evidence-Based Care</h3>
-                  <p className="text-sm text-muted-foreground">Personalized plans with proven outcomes</p>
+                  <h3 className="font-bold text-foreground">Evidence-based treatment</h3>
+                  <p className="text-sm text-muted-foreground">Medication, coaching, lifestyle modification, and psychological strategies—all supported by clinical research.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-foreground">Discreet and professional</h3>
+                  <p className="text-sm text-muted-foreground">Strict confidentiality and compassionate, stigma-free care.</p>
                 </div>
               </div>
             </div>
@@ -73,7 +72,7 @@ export default function About() {
                   <div>
                     <h3 className="text-2xl font-bold text-foreground">Dr. Dash Sidhu</h3>
                     <p className="text-muted-foreground">Psychiatrist & ADHD Specialist</p>
-                    <p className="text-sm text-blue-700 font-semibold mt-1">10+ Years Experience</p>
+                    <p className="text-sm text-blue-700 font-semibold mt-1">8+ Years Experience</p>
                   </div>
                 </div>
               </div>
@@ -82,7 +81,7 @@ export default function About() {
             {/* Floating badge */}
             <Card className="absolute -bottom-4 -right-4 bg-blue-700 text-white border-0 p-4 shadow-lg">
               <div className="text-center">
-                <div className="text-2xl font-bold">10+</div>
+                <div className="text-2xl font-bold">8+</div>
                 <p className="text-xs">Years of Excellence</p>
               </div>
             </Card>

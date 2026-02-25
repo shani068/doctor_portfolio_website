@@ -17,48 +17,64 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
             {/* Badge */}
             <div className="flex items-center gap-2 rounded-full bg-primary/15 px-4 py-2 w-fit border border-primary/30">
               <Brain className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">ADHD & Psychiatry Expert</span>
+              <span className="text-sm font-semibold text-primary">Psychiatrist-Led Adult ADHD</span>
             </div>
 
-            {/* Main heading - Now "Expert ADHD" */}
+            {/* Main heading - from PDF */}
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-foreground">
-                Expert <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-800">ADHD</span>
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-foreground">
+                Adult <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-800">ADHD</span> Assessment
               </h1>
-              <h2 className="text-3xl lg:text-4xl font-semibold text-muted-foreground">
-                & Psychiatric Care for All Ages
+              <h2 className="text-2xl lg:text-3xl font-semibold text-muted-foreground">
+                & Treatment — Consultant Psychiatrist Led
               </h2>
             </div>
 
-            {/* Subheading */}
+            {/* Subheading - PDF intro */}
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-              Specialized diagnosis and treatment of ADHD and psychiatric conditions with evidence-based, comprehensive care. Medication management, family counseling, and behavioral coaching tailored to your needs.
+              We offer comprehensive, evidence-based assessment and management for Adult ADHD,
+              led exclusively by a Consultant Psychiatrist with over 8 years of experience in diagnosing
+              and treating complex mental health conditions. Our service is discreet, professional, and
+              tailored to adults seeking clarity, structure, and support in managing symptoms of ADHD.
             </p>
 
-            {/* Quick Features */}
+            {/* Quick Features - from PDF Why Choose Us */}
             <div className="space-y-3 py-4">
               <div className="flex items-center gap-3">
                 <CheckCircle className="h-5 w-5 text-blue-700 shrink-0" />
-                <span className="text-sm font-medium text-foreground">Comprehensive ADHD Assessment</span>
+                <span className="text-sm font-medium text-foreground">Specialist-led care — full journey overseen by a Consultant Psychiatrist</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="h-5 w-5 text-blue-700 shrink-0" />
-                <span className="text-sm font-medium text-foreground">Personalized Medication Management</span>
+                <span className="text-sm font-medium text-foreground">No waiting lists — quick access to appointments</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="h-5 w-5 text-blue-700 shrink-0" />
-                <span className="text-sm font-medium text-foreground">Family Support & Behavioral Coaching</span>
+                <span className="text-sm font-medium text-foreground">Personalized plans & evidence-based treatment</span>
               </div>
             </div>
 
-            {/* CTA Buttons */}
+            {/* Do You Struggle With… — from PDF */}
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
+              <p className="text-sm font-semibold text-foreground mb-2">Do you struggle with…</p>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li>• Constant distraction or difficulty focusing?</li>
+                <li>• Feeling overwhelmed, even with small tasks?</li>
+                <li>• Losing things, missing deadlines, or procrastinating?</li>
+                <li>• Being told you’re &quot;smart but not living up to your potential&quot;?</li>
+                <li>• Emotional highs and lows, restlessness, or poor impulse control?</li>
+              </ul>
+              <p className="text-sm text-foreground mt-2 font-medium">You may be living with undiagnosed ADHD. Effective help is available.</p>
+            </div>
+
+            {/* CTA Buttons - PDF CTA */}
             <div className="flex flex-col gap-3 sm:flex-row pt-6">
               <Button
                 onClick={onBookingClick}
                 className="flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white text-base font-semibold h-14 px-8 rounded-lg shadow-lg"
                 size="lg"
               >
-                Book Consultation
+                Book Your ADHD Assessment Now
                 <ArrowRight className="h-5 w-5" />
               </Button>
               <Button
@@ -111,7 +127,7 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
                 <div className="absolute bottom-6 left-6 right-6 bg-white  rounded-lg p-4  ">
                   <p className="text-sm font-bold text-foreground mb-1">Dr. Dash Sidhu</p>
                   <p className="text-xs text-blue-700 font-semibold">ADHD & Psychiatry Specialist</p>
-                  <p className="text-xs text-muted-foreground mt-1">MD | 15+ Years Experience</p>
+                  <p className="text-xs text-muted-foreground mt-1">Consultant Psychiatrist | 8+ Years</p>
                 </div>
               </div>
             </div>

@@ -19,7 +19,7 @@ export default function Footer() {
               <h3 className="text-lg font-bold text-foreground">Dr. Dash Sidhu</h3>
             </div>
             <p className="text-sm text-muted-foreground">
-              Providing compassionate, accessible healthcare for all your needs.
+              Psychiatrist-led Adult ADHD assessment and treatment. Discreet, professional, no waiting lists.
             </p>
           </div>
 
@@ -35,6 +35,11 @@ export default function Footer() {
               <li>
                 <a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   About
+                </a>
+              </li>
+              <li>
+                <a href="#pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Pricing
                 </a>
               </li>
               <li>

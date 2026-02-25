@@ -62,7 +62,7 @@ function App() {
       <Hero onBookingClick={() => setIsBookingOpen(true)} />
       <Services />
       <About />
-      <Pricing />
+      <Pricing onBookingClick={() => setIsBookingOpen(true)} />
       <Testimonials />
       <Footer />
 
@@ -70,8 +70,8 @@ function App() {
       <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
         <DialogContent className="max-h-[90vh] overflow-y-auto max-w-2xl">
           <DialogHeader>
-            <DialogTitle className="text-2xl">Book Your Appointment</DialogTitle>
-            <DialogDescription>Schedule your consultation with Dr. Dash Sidhu</DialogDescription>
+            <DialogTitle className="text-2xl">Book Your ADHD Assessment</DialogTitle>
+            <DialogDescription>Confidential consultation with our Consultant Psychiatrist. You don’t have to wait months—quick access to appointments.</DialogDescription>
           </DialogHeader>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -131,13 +131,13 @@ function App() {
                   <SelectTrigger id="service">
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="virtual">Virtual Consultation</SelectItem>
-                    <SelectItem value="home-visit">Home Visit</SelectItem>
-                    <SelectItem value="home-care">Home Care</SelectItem>
-                    <SelectItem value="adhd">ADHD Assessment</SelectItem>
-                    <SelectItem value="general">General Consultation</SelectItem>
-                  </SelectContent>
+<SelectContent>
+                  <SelectItem value="adhd-assessment">ADHD Assessment (Full Pathway)</SelectItem>
+                  <SelectItem value="pre-screening">Pre-Assessment Screening</SelectItem>
+                  <SelectItem value="virtual">Virtual Consultation</SelectItem>
+                  <SelectItem value="follow-up">Follow-Up / Titration</SelectItem>
+                  <SelectItem value="general">General Consultation</SelectItem>
+                </SelectContent>
                 </Select>
               </div>
             </div>

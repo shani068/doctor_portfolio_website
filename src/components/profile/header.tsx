@@ -43,16 +43,22 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
             About
           </button>
           <button
+            onClick={() => scrollToSection('pricing')}
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Pricing
+          </button>
+          <button
             onClick={() => scrollToSection('testimonials')}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Testimonials
           </button>
-          <Button
-            onClick={onBookingClick}
-            className="bg-blue-700 hover:bg-blue-800 text-white"
-          >
-            Book Appointment
+<Button
+              onClick={onBookingClick}
+              className="bg-blue-700 hover:bg-blue-800 text-white"
+            >
+            Book ADHD Assessment
           </Button>
         </nav>
 
@@ -89,6 +95,12 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
               className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
             >
               About
+            </button>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
+            >
+              Pricing
             </button>
             <button
               onClick={() => scrollToSection('testimonials')}
