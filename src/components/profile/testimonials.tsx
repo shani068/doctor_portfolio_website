@@ -7,42 +7,42 @@ const testimonials = [
     name: 'Sarah Johnson',
     role: 'ADHD Patient',
     content:
-      'Dr. Sidhu provided the most comprehensive ADHD assessment I\'ve ever experienced. His virtual consultations are convenient, and his care plan has truly improved my quality of life.',
+      'Dr. Desh Sidhu provided the most comprehensive ADHD assessment I\'ve ever experienced. His virtual consultations are convenient, and his care plan has truly improved my quality of life.',
     rating: 5,
   },
   {
     name: 'Michael Chen',
     role: 'Home Care Client',
     content:
-      'The home visit service was exactly what my mother needed. Dr. Sidhu was professional, compassionate, and provided excellent personalized care in the comfort of our home.',
+      'The home visit service was exactly what my mother needed. Dr. Desh Sidhu was professional, compassionate, and provided excellent personalized care in the comfort of our home.',
     rating: 5,
   },
   {
     name: 'Emma Williams',
     role: 'Parent',
     content:
-      'As a parent of a child with ADHD, I found Dr. Sidhu\'s expertise invaluable. The flexible appointment options and thorough explanations made everything so much easier to understand.',
+      'As a parent of a child with ADHD, I found Dr. Desh Sidhu\'s expertise invaluable. The flexible appointment options and thorough explanations made everything so much easier to understand.',
     rating: 5,
   },
   {
     name: 'David Rodriguez',
     role: 'Patient',
     content:
-      'Virtual consultations have been a game-changer for managing my health. Dr. Sidhu\'s personalized approach and accessibility make him an exceptional healthcare provider.',
+      'Virtual consultations have been a game-changer for managing my health. Dr. Desh Sidhu\'s personalized approach and accessibility make him an exceptional healthcare provider.',
     rating: 5,
   },
   {
     name: 'Lisa Thompson',
     role: 'Chronic Condition Patient',
     content:
-      'The home care services are outstanding. Dr. Sidhu\'s team provides consistent, caring support that has greatly improved my health outcomes and peace of mind.',
+      'The home care services are outstanding. Dr. Desh Sidhu\'s team provides consistent, caring support that has greatly improved my health outcomes and peace of mind.',
     rating: 5,
   },
   {
     name: 'James Mitchell',
     role: 'General Patient',
     content:
-      'From booking to consultation, everything was seamless. Dr. Sidhu listens carefully, provides thorough assessments, and truly cares about his patients\' wellbeing.',
+      'From booking to consultation, everything was seamless. Dr. Desh Sidhu listens carefully, provides thorough assessments, and truly cares about his patients\' wellbeing.',
     rating: 5,
   },
 ]
@@ -57,7 +57,7 @@ export default function Testimonials() {
             What Our Patients Say
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real experiences from patients who have benefited from Dr. Sidhu's compassionate care
+            Real experiences from patients who have benefited from Dr. Desh Sidhu's compassionate care
           </p>
         </div>
 

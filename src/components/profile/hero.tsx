@@ -116,7 +116,7 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
                 <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center">
                   <img
                     src="/doctor-image.jpg"
-                    alt="Dr. Dash Sidhu - ADHD and Psychiatry Specialist"
+                    alt="Dr. Desh Sidhu - ADHD and Psychiatry Specialist"
                     width={400}
                     height={500}
                     className="w-full h-full object-cover"
@@ -125,7 +125,7 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
 
                 {/* Badge overlay */}
                 <div className="absolute bottom-6 left-6 right-6 bg-white  rounded-lg p-4  ">
-                  <p className="text-sm font-bold text-foreground mb-1">Dr. Dash Sidhu</p>
+                  <p className="text-sm font-bold text-foreground mb-1">Dr. Desh Sidhu</p>
                   <p className="text-xs text-blue-700 font-semibold">ADHD & Psychiatry Specialist</p>
                   <p className="text-xs text-muted-foreground mt-1">Consultant Psychiatrist | 8+ Years</p>
                 </div>

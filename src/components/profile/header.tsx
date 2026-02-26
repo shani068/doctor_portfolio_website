@@ -23,7 +23,7 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
           <Stethoscope className="h-5 w-5 text-white" />
           </div>
           <div className="hidden sm:block">
-            <h1 className="text-xl font-bold text-blue-700">Dr. Dash Sidhu</h1>
+            <h1 className="text-xl font-bold text-blue-700">Dr. Desh Sidhu</h1>
             <p className="text-xs text-muted-foreground">Healthcare Provider</p>
           </div>
         </div>

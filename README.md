@@ -1,6 +1,6 @@
 # ADHD Profile - Healthcare Platform
 
-A modern, responsive healthcare platform for Dr. Dash Sidhu, featuring appointment booking, service information, and patient testimonials. Built with React, TypeScript, and Tailwind CSS.
+A modern, responsive healthcare platform for Dr. Desh Sidhu, featuring appointment booking, service information, and patient testimonials. Built with React, TypeScript, and Tailwind CSS.
 
 ## 🚀 Quick Start
 

@@ -16,7 +16,7 @@ export default function Footer() {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-700 text-white font-bold text-lg">
                 <Stethoscope className="h-5 w-5 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-foreground">Dr. Dash Sidhu</h3>
+              <h3 className="text-lg font-bold text-foreground">Dr. Desh Sidhu</h3>
             </div>
             <p className="text-sm text-muted-foreground">
               Psychiatrist-led Adult ADHD assessment and treatment. Discreet, professional, no waiting lists.
@@ -103,7 +103,7 @@ export default function Footer() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Dr. Dash Sidhu. All rights reserved.
+            © {currentYear} Dr. Desh Sidhu. All rights reserved.
           </p>
 
           {/* Social links */}

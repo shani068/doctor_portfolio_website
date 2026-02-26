@@ -70,7 +70,7 @@ export default function About() {
                     <span className="text-5xl font-bold text-blue-700">DS</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground">Dr. Dash Sidhu</h3>
+                    <h3 className="text-2xl font-bold text-foreground">Dr. Desh Sidhu</h3>
                     <p className="text-muted-foreground">Psychiatrist & ADHD Specialist</p>
                     <p className="text-sm text-blue-700 font-semibold mt-1">8+ Years Experience</p>
                   </div>
