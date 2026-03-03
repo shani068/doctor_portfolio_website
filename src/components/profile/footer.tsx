@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button'
-import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Linkedin, Stethoscope } from 'lucide-react'
+import { Mail, Facebook, Twitter, Linkedin, Stethoscope } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-foreground/5 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Main footer content */}
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 mb-12">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 mb-12">
           {/* Brand section */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
@@ -19,7 +19,7 @@ export default function Footer() {
               <h3 className="text-lg font-bold text-foreground">Dr. Desh Sidhu</h3>
             </div>
             <p className="text-sm text-muted-foreground">
-              Psychiatrist-led Adult ADHD assessment and treatment. Discreet, professional, no waiting lists.
+              Private Adult Psychiatric &amp; ADHD Assessment Services. Clinician – Researcher – Consultant.
             </p>
           </div>
 
@@ -32,11 +32,11 @@ export default function Footer() {
                   Services
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   About
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="#pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Pricing
@@ -60,37 +60,17 @@ export default function Footer() {
             <h4 className="font-bold text-foreground">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
-                <div className="text-sm text-muted-foreground">+1 (555) 123-4567</div>
-              </li>
-              <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
-                <a href="mailto:contact@drdashdishu.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  contact@drdashsidhu.com
+                <a
+                  href="mailto:info@drdeshsidhu.com"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  info@drdeshsidhu.com
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
-                <div className="text-sm text-muted-foreground">Dublin, Ireland</div>
-              </li>
-            </ul>
-          </div>
-
-          {/* Hours */}
-          <div className="space-y-4">
-            <h4 className="font-bold text-foreground">Hours</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-blue-700" />
-                Monday - Friday: 9 AM - 5 PM
-              </li>
-              <li className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-blue-700" />
-                Saturday: 10 AM - 2 PM
-              </li>
-              <li className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-blue-700" />
-                24/7 Emergency Support
+              <li className="text-sm text-muted-foreground">
+                Please include a brief summary of your reason for assessment and preferred availability. Pre‑assessment
+                screening will be sent following initial enquiry.
               </li>
             </ul>
           </div>

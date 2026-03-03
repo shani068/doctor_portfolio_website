@@ -24,7 +24,7 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
           </div>
           <div className="hidden sm:block">
             <h1 className="text-xl font-bold text-blue-700">Dr. Desh Sidhu</h1>
-            <p className="text-xs text-muted-foreground">Healthcare Provider</p>
+            <p className="text-xs text-muted-foreground">Consultant Psychiatrist</p>
           </div>
         </div>
 
@@ -36,12 +36,12 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
           >
             Services
           </button>
-          <button
+          {/* <button
             onClick={() => scrollToSection('about')}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             About
-          </button>
+          </button> */}
           <button
             onClick={() => scrollToSection('pricing')}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"

@@ -9,9 +9,10 @@ import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import Hero from './components/profile/hero'
 import Services from './components/profile/services'
-import About from './components/profile/about'
+// import About from './components/profile/about'
 import Testimonials from './components/profile/testimonials'
 import Footer from './components/profile/footer'
+import Research from './components/profile/research'
 import { Calendar, Clock, User, Mail, Phone } from 'lucide-react'
 import Header from "./components/profile/header"
 import Pricing from "./components/profile/pricing"
@@ -61,7 +62,8 @@ function App() {
       <Header onBookingClick={() => setIsBookingOpen(true)} />
       <Hero onBookingClick={() => setIsBookingOpen(true)} />
       <Services />
-      <About />
+      {/* <About /> */}
+      <Research />
       <Pricing onBookingClick={() => setIsBookingOpen(true)} />
       <Testimonials />
       <Footer />
@@ -71,7 +73,10 @@ function App() {
         <DialogContent className="max-h-[90vh] overflow-y-auto max-w-2xl">
           <DialogHeader>
             <DialogTitle className="text-2xl">Book Your ADHD Assessment</DialogTitle>
-            <DialogDescription>Confidential consultation with our Consultant Psychiatrist. You don’t have to wait months—quick access to appointments.</DialogDescription>
+            <DialogDescription>
+              Please include a brief summary of your reason for assessment and preferred availability. Pre‑assessment
+              screening will be sent following initial enquiry.
+            </DialogDescription>
           </DialogHeader>
 
           <form onSubmit={handleSubmit} className="space-y-6">

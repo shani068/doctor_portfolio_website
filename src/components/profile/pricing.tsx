@@ -9,23 +9,32 @@ interface PricingItem {
   featured?: boolean
 }
 
-// PDF Pricing section (exact wording): Initial Assessment total, Follow-Up, Shared Care — NOT the 3 steps
+// PDF: Private Fees
 const pricingItems: PricingItem[] = [
   {
-    title: 'Initial ADHD Assessment',
-    price: '€300 + €500 + €400',
-    description: 'Includes full psychiatric evaluation, diagnostic report, and treatment plan.',
+    title: 'Standard Psychiatric Assessment',
+    price: '€900',
+    description:
+      'Comprehensive Psychiatric Assessment as described under Private Services, including full psychiatric history, developmental background, risk assessment, differential diagnosis and detailed consultant report.',
     featured: true,
   },
   {
-    title: 'Follow-Up / Titration Appointments',
-    price: '€200',
-    description: 'Regular follow-ups for medication titration and monitoring, ongoing reviews to optimize effectiveness and manage side effects.',
+    title: 'ADHD & Neurodevelopmental Assessment',
+    price: '€1,500',
+    description:
+      'Adult ADHD & Neurodevelopmental Assessment including detailed developmental history, validated screening instruments, collateral information where appropriate, and formal diagnostic clarification distinguishing ADHD from overlapping psychiatric conditions.',
   },
   {
-    title: 'Shared Care Letters and Prescriptions',
-    price: 'Available as needed',
-    description: 'Support letters for work, education, or accommodations and prescriptions as required.',
+    title: 'Second Opinion',
+    price: '€800',
+    description:
+      'Second Opinion & Diagnostic Clarification with independent review of prior diagnoses and treatment plans, structured reassessment and clear evidence‑based recommendations.',
+  },
+  {
+    title: 'Functional Recovery Planning Add‑On',
+    price: '€300',
+    description:
+      'Functional Recovery Planning integrating psychiatric findings with occupational functioning, sleep, executive function and lifestyle considerations into a personalised recovery strategy.',
   },
 ]
 
@@ -33,18 +42,18 @@ export default function Pricing({ onBookingClick }: { onBookingClick?: () => voi
   return (
     <section id="pricing" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header - PDF Pricing heading */}
+        {/* Section Header - PDF: Private Fees */}
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold text-foreground sm:text-5xl text-balance">
-            Pricing
+            Private Fees
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Transparent pricing for your ADHD assessment and ongoing care.
+            Private adult psychiatric and ADHD assessments with transparent fees as outlined below.
           </p>
         </div>
 
-        {/* PDF Pricing section: Initial Assessment (€300+€500+€400), Follow-Up €200, Shared Care as needed */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-12">
+        {/* PDF: Private Fees */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
           {pricingItems.map((item, index) => (
             <Card
               key={index}
@@ -95,7 +104,7 @@ export default function Pricing({ onBookingClick }: { onBookingClick?: () => voi
 
         {/* PDF disclaimer */}
         <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-          Please note: This is a private, non-HSE service. Medication prescribing follows Irish national guidelines and may require shared care with your GP.
+          Fees may vary depending on complexity and requirement for collateral information.
         </p>
 
         {/* PDF CTA: Ready to Take the Next Step? */}

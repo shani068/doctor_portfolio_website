@@ -1,10 +1,10 @@
 
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Brain, CheckCircle } from 'lucide-react'
+import { ArrowRight, Brain, Check } from 'lucide-react'
 
 export default function Hero({ onBookingClick }: { onBookingClick: () => void }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary pt-10 pb-20">
+    <section className="relative overflow-hidden bg-linear-to-br from-primary/5 via-background to-secondary pt-10 pb-20">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -mr-48" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/8 rounded-full blur-3xl -ml-48" />
@@ -12,62 +12,83 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left Content */}
+          {/* Left Content – Professional Profile on top */}
           <div className="space-y-8 order-2 lg:order-1">
             {/* Badge */}
             <div className="flex items-center gap-2 rounded-full bg-primary/15 px-4 py-2 w-fit border border-primary/30">
-              <Brain className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">Psychiatrist-Led Adult ADHD</span>
+              <Brain className="h-4 w-4 text-blue-700" />
+              <span className="text-sm font-semibold text-blue-700">Consultant Psychiatrist</span>
             </div>
 
-            {/* Main heading - from PDF */}
-            <div className="space-y-4">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-foreground">
-                Adult <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-800">ADHD</span> Assessment
+            {/* Main heading */}
+            <div>
+              <h1 className="text-4xl  font-bold leading-tight text-foreground">
+                Dr Desh Sidhu, MD, MRCPsych, MCPsychI
               </h1>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-muted-foreground">
-                & Treatment — Consultant Psychiatrist Led
-              </h2>
             </div>
 
-            {/* Subheading - PDF intro */}
-            <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-              We offer comprehensive, evidence-based assessment and management for Adult ADHD,
-              led exclusively by a Consultant Psychiatrist with over 8 years of experience in diagnosing
-              and treating complex mental health conditions. Our service is discreet, professional, and
-              tailored to adults seeking clarity, structure, and support in managing symptoms of ADHD.
-            </p>
-
-            {/* Quick Features - from PDF Why Choose Us */}
-            <div className="space-y-3 py-4">
-              <div className="flex items-center gap-3">
-                <CheckCircle className="h-5 w-5 text-blue-700 shrink-0" />
-                <span className="text-sm font-medium text-foreground">Specialist-led care — full journey overseen by a Consultant Psychiatrist</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle className="h-5 w-5 text-blue-700 shrink-0" />
-                <span className="text-sm font-medium text-foreground">No waiting lists — quick access to appointments</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle className="h-5 w-5 text-blue-700 shrink-0" />
-                <span className="text-sm font-medium text-foreground">Personalized plans & evidence-based treatment</span>
+            {/* Professional Profile text from PDF */}
+            <div className="space-y-2 max-w-xl">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Dr Desh Sidhu is a Consultant Psychiatrist registered with the Irish Medical Council
+                (Registration No: 418090). He is a Member of the Royal College of Psychiatrists (UK) and
+                the College of Psychiatrists of Ireland.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                He currently works within the Irish public health service and provides independent private assessments
+                delivered to high clinical, ethical and governance standards. Dr Sidhu’s clinical focus includes
+                comprehensive adult psychiatric assessment, neurodevelopmental (ADHD) assessment, complex diagnostic
+                clarification, and structured functional recovery planning.
+              </p>
+              <div className="space-y-4 mt-6">
+                <div className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-foreground">
+                      Assessments conducted personally by a Consultant Psychiatrist
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-foreground">Clear differential diagnosis documentation</h3>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-foreground">Evidence‑based prescribing principles</h3>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-foreground">
+                      Collaboration with GP and treating clinicians where appropriate
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-foreground">
+                      Compliance with Irish Medical Council professional standards
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-blue-700 shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-foreground">
+                      Clear boundaries between public and private clinical roles
+                    </h3>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Do You Struggle With… — from PDF */}
-            <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
-              <p className="text-sm font-semibold text-foreground mb-2">Do you struggle with…</p>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Constant distraction or difficulty focusing?</li>
-                <li>• Feeling overwhelmed, even with small tasks?</li>
-                <li>• Losing things, missing deadlines, or procrastinating?</li>
-                <li>• Being told you’re &quot;smart but not living up to your potential&quot;?</li>
-                <li>• Emotional highs and lows, restlessness, or poor impulse control?</li>
-              </ul>
-              <p className="text-sm text-foreground mt-2 font-medium">You may be living with undiagnosed ADHD. Effective help is available.</p>
-            </div>
-
-            {/* CTA Buttons - PDF CTA */}
+            {/* CTA Buttons */}
             <div className="flex flex-col gap-3 sm:flex-row pt-6">
               <Button
                 onClick={onBookingClick}
@@ -77,28 +98,28 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
                 Book Your ADHD Assessment Now
                 <ArrowRight className="h-5 w-5" />
               </Button>
-              <Button
+              {/* <Button
                 variant="outline"
                 className="flex items-center cursor-pointer justify-center hover:text-blue-700 gap-2 text-base font-semibold h-14 px-8 border-2 border-primary text-blue-700 hover:bg-primary/10 bg-white dark:bg-transparent rounded-lg"
                 size="lg"
               >
                 Learn More
-              </Button>
+              </Button> */}
             </div>
 
-            {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-primary/20">
+            {/* Key professional details */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-primary/20">
               <div>
-                <p className="text-2xl font-bold text-blue-700">1000+</p>
-                <p className="text-xs text-muted-foreground">Patients Treated</p>
+                <p className="text-xs font-semibold text-muted-foreground">Irish Medical Council</p>
+                <p className="text-sm font-bold text-blue-700">Registration No: 418090</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-blue-700">15+</p>
-                <p className="text-xs text-muted-foreground">Years Experience</p>
+                <p className="text-xs font-semibold text-muted-foreground">Qualifications</p>
+                <p className="text-sm font-bold text-blue-700">MD, MRCPsych, MCPsychI</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-blue-700">24/7</p>
-                <p className="text-xs text-muted-foreground">Emergency Support</p>
+                <p className="text-xs font-semibold text-muted-foreground">Role</p>
+                <p className="text-sm font-bold text-blue-700">Clinician – Researcher – Consultant</p>
               </div>
             </div>
           </div>
@@ -115,7 +136,7 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
               <div className="relative bg-white backdrop-blur rounded-2xl p-6 shadow-2xl border border-primary/20">
                 <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center">
                   <img
-                    src="/doctor-image.jpg"
+                    src="/sardar.jpg"
                     alt="Dr. Desh Sidhu - ADHD and Psychiatry Specialist"
                     width={400}
                     height={500}
@@ -124,10 +145,12 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
                 </div>
 
                 {/* Badge overlay */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white  rounded-lg p-4  ">
+                <div className="absolute bottom-5 left-6 right-6 bg-white  rounded-lg p-2">
                   <p className="text-sm font-bold text-foreground mb-1">Dr. Desh Sidhu</p>
-                  <p className="text-xs text-blue-700 font-semibold">ADHD & Psychiatry Specialist</p>
-                  <p className="text-xs text-muted-foreground mt-1">Consultant Psychiatrist | 8+ Years</p>
+                  <p className="text-xs text-blue-700 font-semibold">MD, MRCPsych, MCPsychI</p>
+                  <p className="text-xs text-muted-foreground mt-1">Consultant Psychiatrist | Private Adult Psychiatric & ADHD Assessment Services
+
+                    Clinician – Researcher – Consultant</p>
                 </div>
               </div>
             </div>
