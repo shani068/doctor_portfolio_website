@@ -30,8 +30,9 @@ const privateServices = [
 ]
 
 export default function Services() {
+  
   return (
-    <section id="services" className="py-20 sm:py-32 bg-background">
+    <section id="services" className="py-20 sm:pt-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header - PDF: Private Services */}
         <div className="mb-20 text-center">
@@ -49,26 +50,29 @@ export default function Services() {
         </div>
 
         {/* Private Services from PDF */}
-        <div className="grid gap-8 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {privateServices.map((item, index) => {
             const Icon = item.icon
             return (
               <Card
                 key={index}
-                className="group relative overflow-hidden border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl p-8"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl"
               >
-                <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300 bg-linear-to-br from-blue-500/60 to-blue-700/60" />
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-blue-50 via-transparent to-blue-100 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div className="relative z-10 space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-blue-700 shadow-lg">
-                      <Icon className="h-7 w-7" />
+                <div className="relative z-10 flex h-full flex-col gap-6">
+                  <div className="flex items-center gap-4">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 ring-1 ring-blue-100 shadow-sm group-hover:bg-blue-600 group-hover:text-white group-hover:ring-blue-200 transition-colors duration-300">
+                      <Icon className="h-6 w-6" />
                     </div>
+                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700/80 group-hover:bg-blue-600/10 group-hover:text-blue-700">
+                      Clinical Service
+                    </span>
                   </div>
 
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">{item.description}</p>
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold text-slate-900 leading-snug">{item.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </Card>
