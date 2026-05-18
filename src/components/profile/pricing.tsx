@@ -13,14 +13,14 @@ interface PricingItem {
 const pricingItems: PricingItem[] = [
   {
     title: 'Standard Psychiatric Assessment',
-    price: '€900',
+    price: '€600',
     description:
       'Comprehensive Psychiatric Assessment as described under Private Services, including full psychiatric history, developmental background, risk assessment, differential diagnosis and detailed consultant report.',
-    featured: true,
+    featured: false,
   },
   {
     title: 'ADHD & Neurodevelopmental Assessment',
-    price: '€1,500',
+    price: '€900',
     description:
       'Adult ADHD & Neurodevelopmental Assessment including detailed developmental history, validated screening instruments, collateral information where appropriate, and formal diagnostic clarification distinguishing ADHD from overlapping psychiatric conditions.',
   },

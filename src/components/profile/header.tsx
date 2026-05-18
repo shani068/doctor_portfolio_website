@@ -36,12 +36,12 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
           >
             Services
           </button>
-          {/* <button
+          <button
             onClick={() => scrollToSection('about')}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             About
-          </button> */}
+          </button>
           <button
             onClick={() => scrollToSection('pricing')}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"

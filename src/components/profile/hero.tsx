@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight, Brain, Check } from 'lucide-react'
 
 export default function Hero({ onBookingClick }: { onBookingClick: () => void }) {
+  
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-primary/5 via-background to-secondary pt-10 pb-20">
       {/* Background decoration */}
@@ -23,7 +24,7 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
             {/* Main heading */}
             <div>
               <h1 className="text-4xl  font-bold leading-tight text-foreground">
-                Dr Desh Sidhu, MD, MRCPsych, MCPsychI
+                Dr. Deshwinder Sidhu, MD, MA (Healthcare Mgt), MRCPsych, MCPsychI
               </h1>
             </div>
 
@@ -98,28 +99,23 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
                 Book Your ADHD Assessment Now
                 <ArrowRight className="h-5 w-5" />
               </Button>
-              {/* <Button
-                variant="outline"
-                className="flex items-center cursor-pointer justify-center hover:text-blue-700 gap-2 text-base font-semibold h-14 px-8 border-2 border-primary text-blue-700 hover:bg-primary/10 bg-white dark:bg-transparent rounded-lg"
-                size="lg"
-              >
-                Learn More
-              </Button> */}
             </div>
 
             {/* Key professional details */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-primary/20">
-              <div>
-                <p className="text-xs font-semibold text-muted-foreground">Irish Medical Council</p>
-                <p className="text-sm font-bold text-blue-700">Registration No: 418090</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-muted-foreground">Qualifications</p>
-                <p className="text-sm font-bold text-blue-700">MD, MRCPsych, MCPsychI</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-muted-foreground">Role</p>
-                <p className="text-sm font-bold text-blue-700">Clinician – Researcher – Consultant</p>
+            <div className="pt-8 border-t border-primary/20">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <CardDetail
+                  label="Irish Medical Council"
+                  value="Registration No: 418090"
+                />
+                <CardDetail
+                  label="Qualifications"
+                  value="MD, MA (Healthcare Mgt), MRCPsych, MCPsychI"
+                />
+                <CardDetail
+                  label="Role"
+                  value="Clinician - Researcher - Consultant"
+                />
               </div>
             </div>
           </div>
@@ -158,5 +154,14 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
         </div>
       </div>
     </section>
+  )
+}
+
+function CardDetail({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-blue-100 bg-white/90 p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+      <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">{label}</p>
+      <p className="mt-2 text-sm font-bold leading-relaxed text-blue-700">{value}</p>
+    </div>
   )
 }

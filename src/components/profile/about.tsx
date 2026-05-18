@@ -4,60 +4,71 @@ import { Badge } from '@/components/ui/badge'
 
 export default function About() {
   return (
-    <section id="about" className="py-10 bg-secondary/30">
+    <section id="about" className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
-          {/* Content */}
-          <div className="space-y-8">
-            <div>
-              <Badge className="mb-4 bg-primary/10 text-blue-700 hover:bg-primary/20">Professional Profile</Badge>
-              <h2 className="text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                Professional Profile
-              </h2>
-            </div>
-
-            <div className="space-y-4">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Dr Desh Sidhu is a Consultant Psychiatrist registered with the Irish Medical Council (Registration No: 418090). He is a Member of the Royal College of Psychiatrists (UK) and the College of Psychiatrists of Ireland.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                He currently works within the Irish public health service and provides independent private assessments delivered to high clinical, ethical and governance standards. Dr Sidhu’s clinical focus includes comprehensive adult psychiatric assessment, neurodevelopmental (ADHD) assessment, complex diagnostic clarification, and structured functional recovery planning.
-              </p>
-            </div>
-
-            {/* Clinical Governance & Ethical Standards */}
-            
+        <div className="space-y-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <Badge className="mb-4 bg-primary/10 text-blue-700 hover:bg-primary/20">Professional Profile</Badge>
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl text-balance">Dr. Deshwinder Sidhu</h2>
+            <p className="mt-3 text-base sm:text-lg text-muted-foreground">
+              MD, MA (Healthcare Mgt), MRCPsych, MCPsychI, Dip. MH Law &amp; HR (WHO)
+            </p>
+            <p className="text-blue-700 font-semibold mt-1">Consultant Psychiatrist</p>
           </div>
 
-          {/* Image Card */}
-          <div className="relative">
-            <Card className="overflow-hidden border-border p-0">
-              <div className="aspect-square bg-linear-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="inline-flex h-24 w-24 items-center justify-center rounded-full bg-primary/20">
-                    <span className="text-5xl font-bold text-blue-700">DS</span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground">Dr Desh Sidhu, MD, MRCPsych, MCPsychI</h3>
-                    <p className="text-muted-foreground">Consultant Psychiatrist</p>
-                    <p className="text-sm text-blue-700 font-semibold mt-1">
-                      Irish Medical Council Registration No: 418090
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Private Adult Psychiatric &amp; ADHD Assessment Services
-                    </p>
-                    <p className="text-sm text-muted-foreground">Clinician – Researcher – Consultant</p>
-                  </div>
-                </div>
-              </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            <Card className="p-6 space-y-4">
+              <h3 className="text-lg font-bold text-foreground">Clinical Experience &amp; Expertise</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Dr. Sidhu completed both his Basic and Higher Specialist Training Programme in Ireland and holds
+                dual memberships with the College of Psychiatrists of Ireland and the Royal College of Psychiatrists.
+                He has extensive experience managing complex psychiatric presentations within the Irish healthcare
+                system.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                His specialist work includes liaison and psychological medicine at St. James&apos;s Hospital, with a
+                focus on the overlap between physical and mental health in acute emergency settings, alongside supervised
+                Cognitive Behavioural Therapy integration in clinical practice.
+              </p>
             </Card>
 
-            {/* Floating badge */}
-            <Card className="absolute -bottom-4 -right-4 bg-blue-700 text-white border-0 p-4 shadow-lg">
-              <div className="text-center">
-                <div className="text-xs font-semibold">Irish Medical Council</div>
-                <p className="text-xs">Registration No: 418090</p>
-              </div>
+            <Card className="p-6 space-y-4">
+              <h3 className="text-lg font-bold text-foreground">Healthcare Management &amp; Service Innovation</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Complementing clinical practice, Dr. Sidhu holds an MA in Healthcare Management from the Institute of
+                Public Administration, Dublin. His work bridges clinical demand with service delivery and systems
+                performance.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                His dissertation, &ldquo;Adult ADHD in Ireland: Improving Service Efficiency through Audit and Model of
+                Care,&rdquo; outlines a strategic roadmap for neurodevelopmental service improvement through better patient
+                flow and resource allocation.
+              </p>
+            </Card>
+
+            <Card className="p-6 space-y-4">
+              <h3 className="text-lg font-bold text-foreground">Academic &amp; Professional Leadership</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Dr. Sidhu was awarded Best Academy Teacher by the University of Galway and contributes as a clinical
+                examiner and mentor to junior medical staff.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                He represented Ireland at the European Forum for Psychiatric Trainees in Zurich, presenting on workforce
+                wellbeing and the destigmatization of psychiatry.
+              </p>
+            </Card>
+
+            <Card className="p-6 space-y-4">
+              <h3 className="text-lg font-bold text-foreground">Policy, Ethics &amp; Professional Philosophy</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                He holds an International Diploma in Mental Health Law and Human Rights (awarded in association with the
+                WHO) and is recognized for a calm, decisive style that combines systematic observation with empathic
+                engagement.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                His approach remains collaborative and multidisciplinary, with emphasis on patient autonomy and continuous
+                healthcare model improvement.
+              </p>
             </Card>
           </div>
         </div>

@@ -9,8 +9,8 @@ import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import Hero from './components/profile/hero'
 import Services from './components/profile/services'
-// import About from './components/profile/about'
-import Testimonials from './components/profile/testimonials'
+import About from './components/profile/about'
+// import Testimonials from './components/profile/testimonials'
 import Footer from './components/profile/footer'
 import Research from './components/profile/research'
 import { Calendar, Clock, User, Mail, Phone } from 'lucide-react'
@@ -62,10 +62,10 @@ function App() {
       <Header onBookingClick={() => setIsBookingOpen(true)} />
       <Hero onBookingClick={() => setIsBookingOpen(true)} />
       <Services />
-      {/* <About /> */}
+      <About />
       <Research />
       <Pricing onBookingClick={() => setIsBookingOpen(true)} />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Footer />
 
       {/* Booking Dialog */}
