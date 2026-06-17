@@ -119,7 +119,7 @@ export default function Pricing({ onBookingClick }: { onBookingClick?: () => voi
               className="bg-blue-700 hover:bg-blue-800 text-white"
               size="lg"
             >
-              Book Your ADHD Assessment Now
+              Book Appointment
             </Button>
           )}
         </div>

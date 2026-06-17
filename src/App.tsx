@@ -16,6 +16,7 @@ import Research from './components/profile/research'
 import { Calendar, Clock, User, Mail, Phone } from 'lucide-react'
 import Header from "./components/profile/header"
 import Pricing from "./components/profile/pricing"
+import Contact from "./components/profile/contact"
 
 function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false)
@@ -65,6 +66,7 @@ function App() {
       <About />
       <Research />
       <Pricing onBookingClick={() => setIsBookingOpen(true)} />
+      <Contact />
       {/* <Testimonials /> */}
       <Footer />
 

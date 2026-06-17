@@ -96,7 +96,7 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
                 className="flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white text-base font-semibold h-14 px-8 rounded-lg shadow-lg"
                 size="lg"
               >
-                Book Your ADHD Assessment Now
+                Book Appointment
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </div>

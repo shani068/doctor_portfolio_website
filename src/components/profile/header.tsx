@@ -1,18 +1,21 @@
+import { Button } from "@/components/ui/button";
+import { Menu, Stethoscope, X } from "lucide-react";
+import { useState } from "react";
 
-import { Button } from '@/components/ui/button'
-import { Menu, Stethoscope, X } from 'lucide-react'
-import { useState } from 'react'
-
-export default function Header({ onBookingClick }: { onBookingClick: () => void }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+export default function Header({
+  onBookingClick,
+}: {
+  onBookingClick: () => void;
+}) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMenuOpen(false)
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
     }
-  }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
@@ -20,45 +23,47 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-700 text-white font-bold text-lg">
-          <Stethoscope className="h-5 w-5 text-white" />
+            <Stethoscope className="h-5 w-5 text-white" />
           </div>
           <div className="hidden sm:block">
             <h1 className="text-xl font-bold text-blue-700">Dr. Desh Sidhu</h1>
-            <p className="text-xs text-muted-foreground">Consultant Psychiatrist</p>
+            <p className="text-xs text-muted-foreground">
+              Consultant Psychiatrist
+            </p>
           </div>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
           <button
-            onClick={() => scrollToSection('services')}
+            onClick={() => scrollToSection("services")}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Services
           </button>
           <button
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection("about")}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             About
           </button>
           <button
-            onClick={() => scrollToSection('pricing')}
+            onClick={() => scrollToSection("pricing")}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Pricing
           </button>
           <button
-            onClick={() => scrollToSection('testimonials')}
+            onClick={() => scrollToSection("contact")}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
-            Testimonials
+            Contact Us
           </button>
-<Button
-              onClick={onBookingClick}
-              className="bg-blue-700 hover:bg-blue-800 text-white"
-            >
-            Book ADHD Assessment
+          <Button
+            onClick={onBookingClick}
+            className="bg-blue-700 hover:bg-blue-800 text-white"
+          >
+            Book Appointment
           </Button>
         </nav>
 
@@ -69,13 +74,17 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
             size="sm"
             className="bg-blue-700 hover:bg-blue-800 text-white"
           >
-            Book
+            Book Appointment
           </Button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-secondary focus:outline-none"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
       </div>
@@ -85,32 +94,32 @@ export default function Header({ onBookingClick }: { onBookingClick: () => void 
         <div className="border-t border-border bg-background md:hidden">
           <div className="space-y-1 px-4 py-4 sm:px-6">
             <button
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection("services")}
               className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
             >
               Services
             </button>
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection("about")}
               className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
             >
               About
             </button>
             <button
-              onClick={() => scrollToSection('pricing')}
+              onClick={() => scrollToSection("pricing")}
               className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
             >
               Pricing
             </button>
             <button
-              onClick={() => scrollToSection('testimonials')}
+              onClick={() => scrollToSection("contact")}
               className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
             >
-              Testimonials
+              Contact Us
             </button>
           </div>
         </div>
       )}
     </header>
-  )
+  );
 }
