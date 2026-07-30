@@ -19,7 +19,7 @@ export default function Footer() {
               <h3 className="text-lg font-bold text-foreground">Dr. Desh Sidhu</h3>
             </div>
             <p className="text-sm text-muted-foreground">
-              Private Adult Psychiatric &amp; ADHD Assessment Services. Clinician – Researcher – Consultant.
+              Private Adult Psychiatric Services. Clinician – Researcher – Consultant.
             </p>
           </div>
 

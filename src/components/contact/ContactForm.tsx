@@ -1,215 +1,214 @@
-import { useRef, useState, type FormEvent } from "react"
-import emailjs from "@emailjs/browser"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
 import { Loader2, Mail, MessageSquare, Send, User } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { getEmailJsConfig } from "@/lib/emailjs-config"
 import {
-  getFormValues,
-  hasValidationErrors,
-  validateContactForm,
-  type ContactField,
-  type ContactFormErrors,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import {
+  isContactApiConfigured,
+  submitContactInquiry,
+  type ContactApiError,
+} from "@/lib/contact-api"
+import {
+  contactFormDefaultValues,
+  contactFormSchema,
+  type ContactFormValues,
 } from "@/lib/contact-form-validation"
 
-const FIELD_LABELS: Record<ContactField, string> = {
-  user_name: "Full Name",
-  user_email: "Email",
-  subject: "Subject",
-  message: "Message",
-}
-
 export default function ContactForm() {
-  const formRef = useRef<HTMLFormElement>(null)
-  const [errors, setErrors] = useState<ContactFormErrors>({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: contactFormDefaultValues,
+  })
 
-  const clearFieldError = (field: ContactField) => {
-    setErrors((prev) => {
-      if (!prev[field]) return prev
-      const next = { ...prev }
-      delete next[field]
-      return next
-    })
-  }
+  const isSubmitting = form.formState.isSubmitting
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-
-    const form = formRef.current
-    if (!form) return
-
-    const values = getFormValues(form)
-    const validationErrors = validateContactForm(values)
-    setErrors(validationErrors)
-
-    if (hasValidationErrors(validationErrors)) {
-      toast.error("Please fix the highlighted fields before sending.")
-      return
-    }
-
-    const config = getEmailJsConfig()
-    if (!config.isConfigured) {
-      toast.error("Contact form is not configured. Missing environment variables.", {
-        description: config.missingKeys.join(", "),
+  const onSubmit = async (values: ContactFormValues) => {
+    if (!isContactApiConfigured()) {
+      toast.error("Contact form is not configured.", {
+        description: "Missing VITE_CONTACT_API_URL.",
       })
       return
     }
 
-    setIsSubmitting(true)
-
     try {
-      // sendForm reads input `name` attributes — must match EmailJS template variables
-      await emailjs.sendForm(
-        config.serviceId,
-        config.templateId,
-        form,
-        { publicKey: config.publicKey }
-      )
-
-      form.reset()
-      setErrors({})
+      await submitContactInquiry({ ...values, website: "" })
+      form.reset(contactFormDefaultValues)
       toast.success("Message sent successfully!", {
         description: "We will get back to you as soon as possible.",
       })
     } catch (error) {
-      console.error("EmailJS send failed:", error)
-      toast.error("Unable to send your message.", {
-        description: "Please try again later or email us directly.",
+      const apiError = error as ContactApiError
+      console.error("Contact inquiry failed:", apiError)
+
+      if (apiError.status === 400 && Array.isArray(apiError.errors)) {
+        for (const fieldError of apiError.errors) {
+          const path = fieldError.path as keyof ContactFormValues
+          if (path in contactFormDefaultValues && path !== "website") {
+            form.setError(path, { message: fieldError.message })
+          }
+        }
+        toast.error("Please fix the highlighted fields before sending.")
+        return
+      }
+
+      toast.error(apiError.message || "Unable to send your message.", {
+        description:
+          apiError.status === 429
+            ? undefined
+            : "Please try again later or use the contact details in the footer.",
       })
-    } finally {
-      setIsSubmitting(false)
     }
   }
 
-  const fieldError = (field: ContactField) => errors[field]
-
   return (
-    <form
-      ref={formRef}
-      onSubmit={handleSubmit}
-      noValidate
-      className="mx-auto max-w-2xl space-y-6"
-      aria-busy={isSubmitting}
-    >
-      <div className="grid gap-6 sm:grid-cols-2">
-        {/* Full Name — template variable: user_name */}
-        <div className="space-y-2 sm:col-span-1">
-          <Label htmlFor="user_name" className="flex items-center gap-2">
-            <User className="h-4 w-4 text-blue-700" aria-hidden />
-            {FIELD_LABELS.user_name}
-          </Label>
-          <Input
-            id="user_name"
-            name="user_name"
-            type="text"
-            autoComplete="name"
-            placeholder="Jane Doe"
-            disabled={isSubmitting}
-            aria-invalid={Boolean(fieldError("user_name"))}
-            aria-describedby={fieldError("user_name") ? "user_name-error" : undefined}
-            onChange={() => clearFieldError("user_name")}
-            className={fieldError("user_name") ? "border-destructive" : undefined}
-          />
-          {fieldError("user_name") && (
-            <p id="user_name-error" className="text-sm text-destructive" role="alert">
-              {fieldError("user_name")}
-            </p>
-          )}
-        </div>
-
-        {/* Email — template variable: user_email */}
-        <div className="space-y-2 sm:col-span-1">
-          <Label htmlFor="user_email" className="flex items-center gap-2">
-            <Mail className="h-4 w-4 text-blue-700" aria-hidden />
-            {FIELD_LABELS.user_email}
-          </Label>
-          <Input
-            id="user_email"
-            name="user_email"
-            type="email"
-            autoComplete="email"
-            placeholder="jane@example.com"
-            disabled={isSubmitting}
-            aria-invalid={Boolean(fieldError("user_email"))}
-            aria-describedby={fieldError("user_email") ? "user_email-error" : undefined}
-            onChange={() => clearFieldError("user_email")}
-            className={fieldError("user_email") ? "border-destructive" : undefined}
-          />
-          {fieldError("user_email") && (
-            <p id="user_email-error" className="text-sm text-destructive" role="alert">
-              {fieldError("user_email")}
-            </p>
-          )}
-        </div>
-      </div>
-
-      {/* Subject — template variable: subject */}
-      <div className="space-y-2">
-        <Label htmlFor="subject">{FIELD_LABELS.subject}</Label>
-        <Input
-          id="subject"
-          name="subject"
-          type="text"
-          placeholder="Enquiry about ADHD assessment"
-          disabled={isSubmitting}
-          aria-invalid={Boolean(fieldError("subject"))}
-          aria-describedby={fieldError("subject") ? "subject-error" : undefined}
-          onChange={() => clearFieldError("subject")}
-          className={fieldError("subject") ? "border-destructive" : undefined}
-        />
-        {fieldError("subject") && (
-          <p id="subject-error" className="text-sm text-destructive" role="alert">
-            {fieldError("subject")}
-          </p>
-        )}
-      </div>
-
-      {/* Message — template variable: message */}
-      <div className="space-y-2">
-        <Label htmlFor="message" className="flex items-center gap-2">
-          <MessageSquare className="h-4 w-4 text-blue-700" aria-hidden />
-          {FIELD_LABELS.message}
-        </Label>
-        <Textarea
-          id="message"
-          name="message"
-          rows={5}
-          placeholder="How can we help you?"
-          disabled={isSubmitting}
-          aria-invalid={Boolean(fieldError("message"))}
-          aria-describedby={fieldError("message") ? "message-error" : undefined}
-          onChange={() => clearFieldError("message")}
-          className={fieldError("message") ? "border-destructive" : undefined}
-        />
-        {fieldError("message") && (
-          <p id="message-error" className="text-sm text-destructive" role="alert">
-            {fieldError("message")}
-          </p>
-        )}
-      </div>
-
-      <Button
-        type="submit"
-        disabled={isSubmitting}
-        className="w-full bg-blue-700 hover:bg-blue-800 text-white sm:w-auto sm:min-w-[200px]"
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        noValidate
+        className="relative mx-auto max-w-2xl space-y-6"
+        aria-busy={isSubmitting}
       >
-        {isSubmitting ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-            Sending…
-          </>
-        ) : (
-          <>
-            <Send className="h-4 w-4" aria-hidden />
-            Send Message
-          </>
-        )}
-      </Button>
-    </form>
+        {/* Honeypot — invisible to humans; bots that fill it get a fake success */}
+        <FormField
+          control={form.control}
+          name="website"
+          render={({ field }) => (
+            <FormItem
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+            >
+              <FormLabel>Website</FormLabel>
+              <FormControl>
+                <Input
+                  {...field}
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  disabled={isSubmitting}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+
+        <div className="grid gap-6 sm:grid-cols-2">
+          <FormField
+            control={form.control}
+            name="fullName"
+            render={({ field }) => (
+              <FormItem className="sm:col-span-1">
+                <FormLabel className="flex items-center gap-2">
+                  <User className="h-4 w-4 text-blue-700" aria-hidden />
+                  Full Name
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="text"
+                    autoComplete="name"
+                    placeholder="Jane Doe"
+                    disabled={isSubmitting}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem className="sm:col-span-1">
+                <FormLabel className="flex items-center gap-2">
+                  <Mail className="h-4 w-4 text-blue-700" aria-hidden />
+                  Email
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="email"
+                    autoComplete="email"
+                    placeholder="jane@example.com"
+                    disabled={isSubmitting}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <FormField
+          control={form.control}
+          name="subject"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Subject</FormLabel>
+              <FormControl>
+                <Input
+                  {...field}
+                  type="text"
+                  placeholder="Enquiry about a private consultation"
+                  disabled={isSubmitting}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="flex items-center gap-2">
+                <MessageSquare className="h-4 w-4 text-blue-700" aria-hidden />
+                Message
+              </FormLabel>
+              <FormControl>
+                <Textarea
+                  {...field}
+                  rows={5}
+                  placeholder="How can we help you?"
+                  disabled={isSubmitting}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-blue-700 hover:bg-blue-800 text-white sm:w-auto sm:min-w-[200px]"
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+              Sending…
+            </>
+          ) : (
+            <>
+              <Send className="h-4 w-4" aria-hidden />
+              Send Message
+            </>
+          )}
+        </Button>
+      </form>
+    </Form>
   )
 }

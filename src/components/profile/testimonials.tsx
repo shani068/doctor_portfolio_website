@@ -7,7 +7,7 @@ const testimonials = [
     name: 'Sarah Johnson',
     role: 'ADHD Patient',
     content:
-      'Dr. Desh Sidhu provided the most comprehensive ADHD assessment I\'ve ever experienced. His virtual consultations are convenient, and his care plan has truly improved my quality of life.',
+      'Dr. Desh Sidhu provided the most comprehensive assessment I\'ve ever experienced. His virtual consultations are convenient, and his care plan has truly improved my quality of life.',
     rating: 5,
   },
   {

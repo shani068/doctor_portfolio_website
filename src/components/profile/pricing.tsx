@@ -19,10 +19,10 @@ const pricingItems: PricingItem[] = [
     featured: false,
   },
   {
-    title: 'ADHD & Neurodevelopmental Assessment',
+    title: 'Neurodevelopmental Assessment',
     price: '€900',
     description:
-      'Adult ADHD & Neurodevelopmental Assessment including detailed developmental history, validated screening instruments, collateral information where appropriate, and formal diagnostic clarification distinguishing ADHD from overlapping psychiatric conditions.',
+      'Neurodevelopmental Assessment including detailed developmental history, validated screening instruments, collateral information where appropriate, and formal diagnostic clarification distinguishing neurodevelopmental presentations from overlapping psychiatric conditions.',
   },
   {
     title: 'Second Opinion',
@@ -48,7 +48,7 @@ export default function Pricing({ onBookingClick }: { onBookingClick?: () => voi
             Private Fees
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Private adult psychiatric and ADHD assessments with transparent fees as outlined below.
+            Private adult psychiatric assessments with transparent fees as outlined below.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export default function Pricing({ onBookingClick }: { onBookingClick?: () => voi
         <div className="text-center">
           <h3 className="text-2xl font-bold text-foreground mb-3">Ready to Take the Next Step?</h3>
           <p className="text-muted-foreground max-w-xl mx-auto mb-6">
-            You don’t have to struggle alone. Adult ADHD is real, and effective help is available. If you suspect you may have ADHD, book your confidential consultation today.
+            You don’t have to struggle alone. Effective help is available. Book your confidential consultation today.
           </p>
           {onBookingClick && (
             <Button

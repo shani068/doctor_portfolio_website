@@ -74,7 +74,7 @@ function App() {
       <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
         <DialogContent className="max-h-[90vh] overflow-y-auto max-w-2xl">
           <DialogHeader>
-            <DialogTitle className="text-2xl">Book Your ADHD Assessment</DialogTitle>
+            <DialogTitle className="text-2xl">Book Your Assessment</DialogTitle>
             <DialogDescription>
               Please include a brief summary of your reason for assessment and preferred availability. Pre‑assessment
               screening will be sent following initial enquiry.
@@ -139,7 +139,7 @@ function App() {
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
 <SelectContent>
-                  <SelectItem value="adhd-assessment">ADHD Assessment (Full Pathway)</SelectItem>
+                  <SelectItem value="full-assessment">Full Assessment Pathway</SelectItem>
                   <SelectItem value="pre-screening">Pre-Assessment Screening</SelectItem>
                   <SelectItem value="virtual">Virtual Consultation</SelectItem>
                   <SelectItem value="follow-up">Follow-Up / Titration</SelectItem>

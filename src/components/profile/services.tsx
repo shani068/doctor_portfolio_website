@@ -11,9 +11,9 @@ const privateServices = [
   },
   {
     icon: Activity,
-    title: 'Adult ADHD & Neurodevelopmental Assessment',
+    title: 'Neurodevelopmental Assessment',
     description:
-      'Detailed developmental history, validated screening instruments, collateral information where appropriate, and formal diagnostic clarification distinguishing ADHD from overlapping psychiatric conditions.',
+      'Detailed developmental history, validated screening instruments, collateral information where appropriate, and formal diagnostic clarification distinguishing neurodevelopmental presentations from overlapping psychiatric conditions.',
   },
   {
     icon: FileCheck,
@@ -43,7 +43,7 @@ export default function Services() {
             Private Services
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Private Adult Psychiatric &amp; ADHD Assessment Services delivered personally by a Consultant Psychiatrist,
+            Private Adult Psychiatric Services delivered personally by a Consultant Psychiatrist,
             with a focus on comprehensive assessment, diagnostic clarification and structured functional recovery
             planning.
           </p>

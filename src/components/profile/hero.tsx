@@ -38,7 +38,7 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
               <p className="text-lg text-muted-foreground leading-relaxed">
                 He currently works within the Irish public health service and provides independent private assessments
                 delivered to high clinical, ethical and governance standards. Dr Sidhu’s clinical focus includes
-                comprehensive adult psychiatric assessment, neurodevelopmental (ADHD) assessment, complex diagnostic
+                comprehensive adult psychiatric assessment, neurodevelopmental assessment, complex diagnostic
                 clarification, and structured functional recovery planning.
               </p>
               <div className="space-y-4 mt-6">
@@ -133,7 +133,7 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
                 <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center">
                   <img
                     src="/sardar.jpg"
-                    alt="Dr. Desh Sidhu - ADHD and Psychiatry Specialist"
+                    alt="Dr. Desh Sidhu - Consultant Psychiatrist"
                     width={400}
                     height={500}
                     className="w-full h-full object-cover"
@@ -144,7 +144,7 @@ export default function Hero({ onBookingClick }: { onBookingClick: () => void })
                 <div className="absolute bottom-5 left-6 right-6 bg-white  rounded-lg p-2">
                   <p className="text-sm font-bold text-foreground mb-1">Dr. Desh Sidhu</p>
                   <p className="text-xs text-blue-700 font-semibold">MD, MRCPsych, MCPsychI</p>
-                  <p className="text-xs text-muted-foreground mt-1">Consultant Psychiatrist | Private Adult Psychiatric & ADHD Assessment Services
+                  <p className="text-xs text-muted-foreground mt-1">Consultant Psychiatrist | Private Adult Psychiatric Services
 
                     Clinician – Researcher – Consultant</p>
                 </div>
