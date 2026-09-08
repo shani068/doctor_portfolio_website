@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button'
-import { Mail, Facebook, Twitter, Linkedin, Stethoscope } from 'lucide-react'
+import { Facebook, Twitter, Linkedin, Stethoscope } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -59,15 +59,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Contact</h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-blue-700 shrink-0 mt-0.5" />
-                <a
-                  href="mailto:info@drdeshsidhu.com"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  info@drdeshsidhu.com
-                </a>
-              </li>
+              
               <li className="text-sm text-muted-foreground">
                 Please include a brief summary of your reason for assessment and preferred availability. Pre‑assessment
                 screening will be sent following initial enquiry.
